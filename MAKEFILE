@@ -1,0 +1,72 @@
+#===================================================================
+#
+#   PMVDesk Make file
+#
+#===================================================================
+
+.SUFFIXES:
+
+.SUFFIXES: .c .cpp .cxx .rc .ipf
+
+# Compile options:
+# /Se	allow c/c++ tools language options
+# /Gm	use multithread libraries
+# /Wpro	produce diagnostic messages about unprototyped functions
+# /c	compile only
+# /kb	produce basic diagnostic messages
+# /n50	end compilation when error count reach 50
+# /Ti	generate debugger info
+# /Q	no copyright notice when compiling
+# /G4	optimize for 486
+# /ss	allow // comments
+# /O	optimize
+
+# for multithread apps use
+# /Gm	use multithread libraries
+# LIBS	= DDE4MBS.LIB+OS2386.LIB
+
+CFLAGS1	= /c /kb /n50 /Ti /Q /ss /Se /Wpro
+CFLAGS2	= /C /G4 /ss /Se /Q /O
+ICC	= icc $(CFLAGS2)
+LIBS	= DDE4NBS.LIB+OS2386.LIB
+LFLAGS1	= /NOE /NOD /A:16 /NOI /NOL /C
+LFLAGS2	= /NOE /NOD /A:16 /F /PACKC /NOI /NOL /E
+LINK	= LINK386 $(LFLAGS2)
+
+.c.lst:
+    $(ICC) $*.lst $*.obj $*.c
+
+.c.obj:
+    $(ICC) $*.obj $*.c
+
+.ipf.hlp:
+        ipfc $*.ipf /W3
+
+.rc.res:
+        rc -r $*.rc
+
+ALL_OBJ = dlg.obj help.obj main.obj messages.obj pmvdprocs.obj
+
+ALL_IPF = pmvd.ipf popup.ipf options.ipf tutorial.ipf
+
+all: pmvd.exe pmvd.hlp
+
+dlg.obj: dlg.c xtrn.h
+
+help.obj: help.c xtrn.h
+
+main.obj: main.c strings.h pmvd.h xtrn.h
+
+messages.obj: messages.c strings.h xtrn.h
+
+pmvdprocs.obj: pmvdprocs.c
+
+main.res: main.rc pmvd.h pmvd.ico product.dlg
+ rc -r main.rc
+
+pmvd.hlp: $(ALL_IPF)
+
+pmvd.exe: $(ALL_OBJ) pmvd.def main.res
+ $(LINK) $(ALL_OBJ), pmvd.exe, pmvd.map, $(LIBS), pmvd.def
+ rc -p -x main.res pmvd.exe
+

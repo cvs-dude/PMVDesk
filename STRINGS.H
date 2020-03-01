@@ -1,0 +1,13 @@
+#define SZ_APPNAME	"PM Virtual Desktop"
+#define SZ_KEYNAME	"Preferences"
+#define SZ_TITLE	"PMVDesk"
+#define SZ_RUNNING	"PMVDesk is already running!\nClosing this instance."
+#define SZ_ENVIRON_VAR	"PMVDESK_INI"
+#define SZ_INI_FILE	"PMVDESK.INI"
+#define SZ_MULT_CPY_MUTEX	"\\SEM32\\PMVDMultipleCopyMutex"
+#define SZ_THREADINITFAILED	"Initialization failed. Closing application"
+#define SZ_HELPWINDOWTITLE	"PMVDesk Help"
+#define SZ_HELPLIBRARYNAME	"PMVD.HLP"
+#define SZ_HELPLOADERROR	"Failed to load help manager."
+#define SZ_HELPDISPLAYERROR	"Failed to display help panel."
+#define SZ_NOTIMER	"No timers available. PLEASE QUIT.\nApplication can not work properly."

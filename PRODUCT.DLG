@@ -1,0 +1,38 @@
+DLGINCLUDE 1 "dlg.h"
+
+BITMAP IDR_BITMAP "prodinfo.bmp"
+
+DLGTEMPLATE IDD_PRODUCTINFO LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "Product Information", IDD_PRODUCTINFO,                9,  17, 280, 150,
+            FS_NOBYTEALIGN | FS_DLGBORDER | WS_VISIBLE | WS_CLIPSIBLINGS | WS_SAVEBITS | WS_ANIMATE, FCF_TITLEBAR | FCF_SYSMENU
+    BEGIN
+        CONTROL  IDR_BITMAP, IDC_BITMAP,                           20,  105,   0,   0,
+                 WC_STATIC, SS_BITMAP | WS_GROUP | WS_VISIBLE
+        CTEXT   "PM Virtual Desktop Application ver. 0.25.", 256,                   0,  92, 280,   8,
+                 SS_TEXT | DT_CENTER | DT_TOP | WS_GROUP | WS_VISIBLE
+
+        CTEXT   "¸ Copyright Carrick von Schoultz 1994. All rights reserved.", 258,     0,  80, 280,   8,
+                 SS_TEXT | DT_CENTER | DT_TOP | WS_GROUP | WS_VISIBLE
+
+        CTEXT   "This version is freeware, but please send",
+                 257,                                          0,  70, 280,   8,
+                 SS_TEXT | DT_CENTER | DT_TOP | WS_GROUP | WS_VISIBLE
+
+        CTEXT   "me a postcard from your part of the world.",
+                 257,                                          0,  60, 280,   8,
+                 SS_TEXT | DT_CENTER | DT_TOP | WS_GROUP | WS_VISIBLE
+
+        CTEXT   "Carrick von Schoultz,", 258,      0,  48, 280,   8,
+                 SS_TEXT | DT_CENTER | DT_TOP | WS_GROUP | WS_VISIBLE
+
+        CTEXT   "Mittarinkatu 4 bB 32, SF-20100 Turku, Finland.", 257,  0,  38, 280,   8,
+                 SS_TEXT | DT_CENTER | DT_TOP | WS_GROUP | WS_VISIBLE
+
+        CTEXT   "Any comments by EMail: cschoult@aton.abo.fi", 257,  0,  25, 280,   8,
+                 SS_TEXT | DT_CENTER | DT_TOP | WS_GROUP | WS_VISIBLE
+
+        DEFPUSHBUTTON "Ok", IDC_OK,  120,   5,  40,  15
+    END
+END
+

@@ -1,0 +1,29 @@
+ PMVDesk new features and corrected bugs (January 3, 1994)
+ ========================================================
+
+ Menu items:
+ -----------
+ 'Buttons'. You can change the size of your virtual desktop.
+
+ ETC:
+ ----
+ Problem with minimized programs (icons) fixed.
+
+ You may size the PMVDesk window to a size of 32*32 pixels.
+
+ Popup-menu opens on buttons.
+
+ The source code has been completely rewritten.
+
+ Some corrections to the documentation.
+
+
+ Known problems:
+ ---------------
+ If you open a window or application in one virtual desktop,
+ and then move to another and either close your application
+ from the Workplace Shell "Window List" or do a shutdown.
+ The next time you open your window or application, it will
+ almost always be positioned off the screen.
+ To get it back; either try PMVDesk "Util + Retrieve windows",
+ or "Tile" or "Cascade" from Workplace Shell "Window List".

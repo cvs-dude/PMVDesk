@@ -1,0 +1,103 @@
+/**************************************************************************
+ *  File name  :  main.rc
+ *
+ *  Description:  This resource file contains the menu and string
+ *                table definitions.
+ *************************************************************************/
+#include <os2.h>
+#include "pmvd.h"
+
+ICON ID_MAINWND pmvd.ico
+
+/*
+ * Application specific menus go here.
+ */
+MENU ID_MAINWND PRELOAD
+{
+ SUBMENU "~Options", IDM_OPTIONS, MIS_TEXT {
+	MENUITEM "~Frame controls\tAlt+F",	IDM_TOGGLECONTROLS, MIS_TEXT
+	MENUITEM "Float on ~top\tAlt+T",	IDM_FLOAT, MIS_TEXT
+	MENUITEM "~Retrieve windows on exit",	IDM_RETRIEVE, MIS_TEXT
+	MENUITEM SEPARATOR
+	SUBMENU  "~Buttons", IDM_BUTTONS, MIS_TEXT {
+		MENUITEM "2 x 2", IDM_2X2, MIS_TEXT
+		MENUITEM "3 x 3", IDM_3X3, MIS_TEXT
+		MENUITEM "4 x 4", IDM_4X4, MIS_TEXT
+	}
+	SUBMENU  "~Util", IDM_UTIL, MIS_TEXT {
+		MENUITEM "~Retrieve windows", IDM_VISIBLE, MIS_TEXT
+	}
+ }
+
+ SUBMENU "~Help", IDM_HELP, MIS_TEXT {
+	MENUITEM "Help ~index",	IDM_HELPINDEX,		MIS_TEXT
+	MENUITEM "~General help",	IDM_HELPGENERAL,	MIS_TEXT
+	MENUITEM "~Using help",	IDM_HELPUSINGHELP,	MIS_TEXT
+	MENUITEM "~Keys help",	IDM_HELPKEYS,		MIS_TEXT
+	MENUITEM SEPARATOR
+	MENUITEM "~Product information", IDM_HELPPRODUCTINFO,	MIS_TEXT
+ }
+}
+
+ACCELTABLE ID_MAINWND
+{
+    "f",    IDM_TOGGLECONTROLS, CHAR, ALT
+    "F",    IDM_TOGGLECONTROLS, CHAR, ALT
+    "t",    IDM_FLOAT, CHAR, ALT
+    "T",    IDM_FLOAT, CHAR, ALT
+	VK_F10, IDM_POPUPMENU, VIRTUALKEY, SHIFT
+	VK_F7,	SC_MOVE, VIRTUALKEY, ALT
+	VK_F8,	SC_SIZE, VIRTUALKEY, ALT
+	VK_F11,	SC_HIDE, VIRTUALKEY, ALT
+	VK_F4,	SC_CLOSE, VIRTUALKEY, ALT
+}
+
+MENU IDM_POPUPMENU {
+	SUBMENU     "~Help",    IDM_HELP,   MIS_TEXT
+	{
+		MENUITEM    "Help ~index",       IDM_HELPINDEX,      MIS_TEXT
+		MENUITEM    "~General help",     IDM_HELPGENERAL,    MIS_TEXT
+		MENUITEM    "~Using help",       IDM_HELPUSINGHELP,  MIS_TEXT
+		MENUITEM    "~Keys help",        IDM_HELPKEYS,       MIS_TEXT
+		MENUITEM SEPARATOR
+		MENUITEM    "~Product information",  IDM_HELPPRODUCTINFO, MIS_TEXT
+	}
+	SUBMENU "~Window", IDM_WINDOW, MIS_TEXT {
+		MENUITEM "~Move\tAlt+F7", SC_MOVE, MIS_TEXT
+		MENUITEM "~Size\tAlt+F8", SC_SIZE, MIS_TEXT
+		MENUITEM "~Hide\tAlt+F11", SC_HIDE, MIS_TEXT
+		MENUITEM SEPARATOR
+		MENUITEM "~Close\tAlt+F4", SC_CLOSE, MIS_TEXT
+	}
+	MENUITEM SEPARATOR
+	SUBMENU "~Util", IDM_UTIL, MIS_TEXT {
+		MENUITEM "~Retrieve windows", IDM_VISIBLE, MIS_TEXT
+	}
+	SUBMENU  "~Buttons", IDM_BUTTONS, MIS_TEXT {
+		MENUITEM "2 x 2", IDM_2X2, MIS_TEXT
+		MENUITEM "3 x 3", IDM_3X3, MIS_TEXT
+		MENUITEM "4 x 4", IDM_4X4, MIS_TEXT
+	}
+	MENUITEM SEPARATOR
+	MENUITEM "~Frame controls\tAlt+F", IDM_TOGGLECONTROLS, MIS_TEXT
+	MENUITEM "Float on ~top\tAlt+T", IDM_FLOAT, MIS_TEXT
+	MENUITEM "~Retrieve windows on exit", IDM_RETRIEVE, MIS_TEXT
+	MENUITEM SEPARATOR
+	MENUITEM "~Cancel", IDM_CANCEL, MIS_TEXT
+}
+
+/*
+ *  Help table definition
+ */
+HELPTABLE   TEMPLATE_HELP_TABLE
+{
+    HELPITEM    ID_MAINWND,       SUBTABLE_MAIN,         PANEL_MAIN
+}
+
+HELPSUBTABLE SUBTABLE_MAIN
+SUBITEMSIZE     2
+{
+}
+
+rcinclude product.dlg
+

@@ -1,0 +1,205 @@
+ 
+ PM VIRTUAL DESKTOP (PMVDesk) FOR OS/2 2.X
+ ==========================================
+ Version: 0.25 (previous version: PMVDesk ver 0.21) 
+ Date:    January 3, 1994
+ Author:  Carrick von Schoultz, cschoult@aton.abo.fi
+ 
+ 
+ Introduction
+ -------------
+ This is the documentation for the PMVDesk. I recommend that you
+ read it!
+ (At least have a look at the "Environment variable" section.)
+ 
+ PMVDesk is a Virtual Desktop utility for the OS/2 2.x Workplace Shell. 
+ When you start the program you will see a 9 button grid. Each button 
+ represents a screen (of your current videoadapter resolution). The 
+ current screen is marked with an "X". 
+ 
+ When you press one of the buttons (move the cursor over it and click 
+ mouse button 1) you move to that virtual location. (In this version 
+ you can not see your open windows in the PMVDesk application, ...but 
+ just wait for the future versions). Your Workplace Shell Desktop 
+ (icons) will always be visible. This way you can easily get hold of
+ those objects (where ever you are). 
+ 
+ Features
+ ---------
+
+"Options" menu:
+
+ - Uncheck "Frame controls" to hide title and menu bars.
+   You can also use Alt-F.
+
+ - Check "Float on top" to keep PMVDesk the topmost window. Uncheck to
+   let it behave as a normal window. You can also use Alt-T.
+ 
+ - Check "Retrieve windows on exit" to retrieve windows back to
+   the active desktop when you exit PMVDesk. 
+   Note. Retrieved windows are hidden. To activate: select application
+   from Workplace Shell "Window List". Only windows with child windows
+   (ex. dialog windows) are retrieved visible.
+
+ - "Buttons" + "2 x 2", "3 x 3" or "4 x 4" changes the size of your
+   virtual desktop.
+
+ - "Util" + "Retrieve windows" to retrieve windows back to the active
+   desktop. 
+   Note. Retrieved windows are hidden. To activate: select application
+   from Workplace Shell "Window List". Only windows with child windows
+   (ex. dialog windows) are retrieved visible.
+
+ "Help" menu:
+ Standard "Help" menu. You can also use F1 to activate help.
+
+ System menu:
+ Standard system menu.
+
+ Popup menu:
+ To activate press mouse button 2, or press SHIFT + F10 (when PMVDesk is
+ active). Same features as in "Options" menu + "Help" menu and some
+ features from the system menu.
+
+ To move the PMVDesk window (when frames are hidden), select "Move"
+ from the popup menu "Window" submenu, or press ALT-F7.
+
+ Choose any application from the "Window List", and it will be shown in
+ the visible area.
+
+ Choose "Retrieve windows" from PMVDesk "Options" + "Util" menu to
+ bring all windows to the lover left corner of the visible area.
+ Windows that were moved are now hidden. To get them visible, just
+ choose them from the "Window List".
+
+ By hiding the title and menu bars and resizing the window, you can
+ position PMVDesk for example in the lower corner of the screen, and so
+ out of the way.
+ 
+ Environment variable
+ ---------------------
+ PMVDesk uses a environment variable: PMVDESK_INI. This variable
+ specifies the filename (including full path) that PMVDesk should use
+ for storing its options. If this environment variable is not set,
+ PMVDesk will create the file PMVDESK.INI in the current directory
+ and store its information there. I recommend that you put the line:
+
+ SET PMVDESK_INI=C:\OS2\PMVDESK.INI
+
+ in your CONFIG.SYS (Of course, you can use any other path or filename
+ that you want). By doing this you avoid multiple copies of PMVDESK.INI
+ scattered around your hard drive.
+ You will have to reboot before this line will take effect.
+
+ PMVDesk will "remember" it's last position and virtual screen. If you 
+ put a PMVDesk Program Object in your startup folder, it will start where 
+ you last left it. You may also "Shutdown" your system without closing 
+ PMVDesk (because "Shutdown" closes it for you). Remember to put the 
+ line SET RESTARTOBJECTS=STARTUPFOLDERSONLY, in your CONFIG.SYS
+ file before SET AUTOSTART=PROGRAMS, TASKLIST, FOLDERS, CONNECTIONS.
+ 
+ Troubleshooting
+ ----------------
+ Recovering "lost" windows: 
+ - Choose "Retrieve windows" from PMVDesk "Settings" menu to
+   bring all windows to the lover left corner of the visible area.
+   Note. Retrieved windows are hidden. To activate: select application
+   from Workplace Shell "Window List". Only windows with child windows
+  (ex. dialog windows) are retrieved visible.
+ - you may choose the "lost" program from Workplace Shell "Window List"
+   and cascade the program back to the visible area (press mouse button
+   2, choose "Cascade").
+
+ Limitations
+ ------------
+ This version supports up to 100 open windows.
+ It is possible to start only one instance of PMVDesk. A warning
+ dialog informs you if you try to start a second instance.
+ 
+ Starting the program
+ ---------------------
+ To start PMVDesk, double click on the program object.
+ 
+ Program requirements
+ ---------------------
+ To use PMVDesk, you must be running OS/2 2.0 (or later), and of
+ course Workplace Shell as your shell. 
+ 
+                            *      *      *
+ 
+ Registering
+ ------------
+ PM Virtual Desktop is in its current version a freeware program. 
+ As this is not the final version, I do not require you to register 
+ it even if you should choose to keep and use it. However, it would be 
+ nice to get a postcard from your part of the world! 
+ 
+ Since this version of PMVDesk is freeware, you are permitted
+ (and encouraged) to pass on the file PMVD???.ZIP. You may NOT 
+ modify this file (or its individual components) before passing it on.
+
+ 
+ Development System
+ -------------------
+ IBM PS/2 model 90       486/20MHz (Overdrive)
+                         16 Mb RAM
+                         270 Mb hardfile
+                         APPLE CD-ROM 150 (Sony-541)
+                         XGA + 14" multisync
+ OS/2 ver. 2.1 GA (UK edition),
+ 
+ Development Tools
+ ------------------
+ IBM C Set ++ for OS/2, ver 2.0
+ IBM OS/2 Developer's Toolkit 2.0 + toolkit update
+ EPM and E editors
+ - and of course:
+ PM Virtual Desktop (earlier versions)
+ 
+ Tested Environments
+ --------------------
+ OS/2 ver. 2.1 GA,
+ in XGA (1024*768) and VGA (640*480) resolutions.
+ 
+ Why I wrote PMVDesk
+ --------------------
+ Since nobody had yet released a Virtual Desktop utility, and I find my 
+ screen a little tiny. I also had to write a program as an assignment 
+ for my C-language course at school, and had the opportunity to choose 
+ what to do. I also wanted to learn about writing OS/2 Workplace Shell 
+ compliant programs, and this was the hard way. 
+ Any further enhancements (after version 0.11) are made just to keep you
+ happy, ...and to keep me busy.
+
+ History
+ --------
+ PMVDesk was first released as "CvS - Virtual Screen". I changed the name,
+ to avoid confusion, when I was told there is a CVS (Concurrent Versioning
+ System) application.
+ See "new.doc" for new features introduced and bugs corrected, and some
+ problems not yet solved.
+
+ Who am I
+ ---------
+ Name:       Carrick von Schoultz
+ Age:        26
+ Occupation: Student (Computer Science at Abo Akademi University, Finland) 
+ 
+ How to contact me
+ ------------------
+ I would love to hear from you. If you have any comments, suggestions, 
+ or wishes for new PMVDesk features, please write to me. 
+ 
+ I can be reached on the Internet at cschoult@aton.abo.fi. 
+ And remember to send me a postcard: 
+ 
+ Carrick von Schoultz
+ Mittarinkatu 4 bB 32
+ SF-20100 Turku
+ FINLAND
+ 
+ 
+ SPECIAL THANKS TO PETER NIELSEN AND ALL OF YOU WHO HAVE WRITTEN TO ME.
+
+
+

@@ -1,0 +1,20 @@
+
+ PMVDesk
+
+ Start         Length     Name                   Class
+ 0001:00000000 000003B12H CODE32                 CODE 32-bit
+ 0002:00000000 000000070H DDE4_DATA32            DATA 32-bit
+ 0003:00000000 000000290H DATA32                 DATA 32-bit
+ 0003:00000290 000000000H CTOR_DTOR1             DATA 32-bit
+ 0003:00000290 000000000H CTOR_DTOR2             DATA 32-bit
+ 0003:00000290 000000000H CTOR_DTOR3             DATA 32-bit
+ 0003:00000290 000000000H CONST32                CONST 32-bit
+ 0003:00000290 000000000H BSS32                  BSS 32-bit
+ 0003:00000290 0000000B0H c_common               BSS 32-bit
+ 0003:00000340 000002000H STACK32                STACK 32-bit
+
+ Origin   Group
+ 0003:0   DGROUP
+ 0000:0   FLAT
+
+Program entry point at 0001:000032A0
