@@ -1,0 +1,39 @@
+ PMVDesk frequently asked questions
+ ===================================
+
+ What does PMVDesk do to my system and windows?
+ -----------------------------------------------
+ PMVDesk only moves/repositions your windows, nothing else!
+ 
+ The "Sticky" feature usually works fine, but sometimes 
+ if I close PMVDesk and restart, the "Sticky" feature 
+ will not be saved on some windows. Why?
+ -------------------------------------------------------
+ I implemented the saving of "sticky" windows by querying the 
+ frame window title. If your window has not got a frame window 
+ title, then PMVDesk can not store its data.
+
+ The "Sticky" feature usually works fine, but sometimes if I 
+ close PMVDesk and restart, the "Sticky" feature will affect 
+ windows that I have not assigned "Sticky". Why?
+ ------------------------------------------------------------
+ I implemented the saving of "sticky" windows by querying the 
+ frame window title. If your window has the same title as some
+ other window (that is assigned "Sticky"), then your window is
+ also assigned sticky.
+
+ How did you implement PMVDesk?
+ ------------------------------
+ First I enumerate all your wisible windows, and query their
+ size and position. I create a tiny window representing your
+ window, divide the size of the original by the value selected
+ in "Scale" an position this window in PMVDesk window. I store 
+ the window handle, and the eqvivalent window handle of my tiny 
+ window in to an array, so I can later find the corresponding
+ windows.
+ When you move the tiny window in PMVDesk, PMVDesk repositions
+ your window to the new position. When you move your original
+ window a input hook checks if your action should affect the
+ the tiny window in PMVDesk. If you close or start an application, 
+ the input hook checks if some action is needed in PMVDesk.
+
